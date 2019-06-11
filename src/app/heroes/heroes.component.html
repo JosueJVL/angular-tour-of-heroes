@@ -7,19 +7,20 @@
   </label>
 </div> -->
 
-<h2>MY HEROESdssd</h2>
-<ul>
+<h2>MY HEROES</h2>
+
+<!-- <ul class="heroes"> -->
   <!-- <li>
     <span class="badge">{{ hero.id}}</span>{{hero.name}}
   </li> -->
-  <li *ngFor="let hero of heroes"
+  <!-- <li *ngFor="let hero of heroes"
     [class.selected]="hero === selectedHero"
     (click)="onSelect(hero)">
     <span class="bedge">{{hero.id}}</span>{{hero.name}}
   </li>
-</ul> 
+</ul>  -->
 
-<div *ngIf="selectedHero">
+ <!-- <div *ngIf="selectedHero">
     <h2>{{selectedHero.name | uppercase}}</h2>
     <div><span>Id:</span>{{selectedHero.id}}</div>
       <div>
@@ -27,4 +28,14 @@
           <input [(ngModel)]="selectedHero.name" placeholder="name"/>
         </label>
       </div>
-  </div>
+  </div> -->
+
+  <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->
+
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+    </li>
+  </ul>
